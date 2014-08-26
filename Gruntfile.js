@@ -28,6 +28,14 @@ module.exports = function(grunt) {
             //place files here to delete from Dist at the end of the build
           ]
         }]
+      },
+      everything: {
+        files: [{
+          dot: true,
+          src: [
+            'dist/*'
+          ]
+        }]
       }
     },
     // concats all JS files into one final dest file
@@ -59,7 +67,7 @@ module.exports = function(grunt) {
       main: {
         files: [{
           expand: true,
-          src: ['**', '!**/node_modules/**', '!**/dist/**'],
+          src: ['**', '!**/node_modules/**', '!**/dist/**', '!**/app/**', '!.*'],
           dest: 'dist/'
         }, ]
       }
@@ -180,7 +188,7 @@ module.exports = function(grunt) {
     'copy'
   ]);
   grunt.registerTask('test', [
-
+    'clean:everything'
   ]);
 
 };
