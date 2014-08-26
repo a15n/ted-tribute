@@ -1,20 +1,40 @@
 .jumbotron {
-	padding: 0px 20px;
-	height: 100px;
-	background-color: #000;
-	display: block;
-	img {
-		height: 100px;
+  padding: 0px 20px;
+  height: 100px;
+  background-color: #000;
+  display: block;
+  img {
+    height: 100px;
+  }
+}
+body {
+  font-family: helvetica;
+  background-color: #444;
+}
+main img {
+  width: 100%;
+  margin: 5px;
+}
+.image {
+  width: 100%;
+  position: relative;
+}
+.text {
+  font-size: large;
+  position: absolute;
+  /*top: 33%;*/
+  bottom:5%;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  margin-left: 5px;
+}
+
+a {
+	color: white;
+	&:hover{
+		color:#E12D23;
 	}
 }
-
-body {
-	font-family: helvetica;
-}
-
-main img {
-	height: 100%;
-	width: 100%;
-	margin: 5px;
-}
-

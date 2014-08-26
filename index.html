@@ -14,16 +14,23 @@
   <div ng-controller="TedController">
     <div class="jumbotron">
       <img src="images/ted.jpg" alt="ted talks logo">
+
     </div>
+
+
     <div class="container">
       <div class="row">
-        <aside class="col col-sm-2">
-          SEARCH BAR
-        </aside>
-        <main class="col col-sm-10">
+        <main class="col col-sm-12">
           <div ng-repeat="item in items">
-            <div class="col col-xs-6 col-sm-4">
-            <img ng-src="http://lorempixel.com/300/300/" alt="">
+            <div class="col col-xs-12 col-sm-6 col-md-4">
+              <div class="image">
+
+                <img ng-src="{{item['media:thumbnail'].url}}" alt="">
+                <span class="text">{{item.title}}
+                  <br><a ng-href="{{item['media:content'].url}}">WATCH</a>
+                </span>
+
+              </div>
             </div>
           </div>
         </main>
