@@ -17,17 +17,19 @@
     </div>
     <div class="container">
       <div class="row">
-        <aside class="col col-sm-3">
+        <aside class="col col-sm-2">
           SEARCH BAR
         </aside>
-        <main class="col col-sm-9">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quae dolor ipsum, aperiam, perspiciatis explicabo delectus placeat doloribus, magni nostrum impedit? Culpa, soluta, dolorum. A libero fugiat dicta quo unde? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum officiis dicta, explicabo rerum incidunt sapiente tempore fugit facere ipsam doloribus, temporibus ipsum molestias maxime veniam dolore voluptas! Qui, nobis, eius. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime est reiciendis, vitae voluptate optio quisquam! Quis officia tempore enim quisquam, soluta excepturi sunt consectetur, vitae omnis fugiat dolor modi ipsam!
+        <main class="col col-sm-10">
+          <div ng-repeat="item in items">
+            <div class="col col-xs-6 col-sm-4">
+            <img ng-src="http://lorempixel.com/300/300/" alt="">
+            </div>
+          </div>
         </main>
       </div>
     </div>
-    <!-- <div ng-repeat="item in items">
-      <p>{{item.title}}</p>
-    </div> -->
+
   </div>
 
 
