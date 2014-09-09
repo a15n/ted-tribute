@@ -5,21 +5,24 @@
   <meta charset="utf-8">
   <title>TED tribute</title>
 
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body ng-app="tedForm" ng-init="loading === true">
+<body ng-app="tedForm">
   <div ng-controller="TedController">
     <div class="jumbotron">
       <img src="images/ted.jpg" alt="ted talks logo">
     </div>
 
+    <div class="container" ng-cloak>
 
-    <div class="container" ng-hide="loading">
       <div class="row">
-        <main class="col col-sm-12">
+        <div class="col" ng-show="loading">
+          <img class="loader" src="img/loader.GIF" alt="loading spinner">
+        </div>
+
+        <main class="col col-sm-12" ng-hide="loading">
           <div ng-repeat="item in items">
             <div class="col col-xs-12 col-sm-6 col-md-4">
               <div class="image">
@@ -33,14 +36,13 @@
         </main>
       </div>
     </div>
-
   </div>
-
 
   <!-- Javascripts -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/angular.min.js"></script>
+  <script src="js/bigObject.js"></script>
   <script src="js/main.js"></script>
 
 </body>

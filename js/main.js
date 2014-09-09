@@ -14,23 +14,33 @@ function parseTitle(inputArray){
   var i = inputArray.length;
   while (i--) {
     var title = inputArray[i].title;
-    inputArray[i].title = title.substring(title.indexOf(":", title.indexOf(":") + 1)+2);
+    inputArray[i].title = title.substring(title.indexOf(':', title.indexOf(':') + 1)+2);
   }
   return inputArray;
 }
 
 angular.module('tedForm', [])
-  .controller('TedController', ['$scope',
-    function($scope) {
+  .controller('TedController', ['$scope','$timeout',
+    function($scope, $timeout) {
 
-      // $scope.loading = true; already ng-init in HTML
+      console.time('items loaded: ');
 
-      var allData = JSON.parse(httpGet(apiUrl));
+      $scope.loading = true; //already ng-init in HTML
+
+      // var allData = JSON.parse(httpGet(apiUrl));
+
+      // to help during development only. Minimizes API calls. Remove JS reference in HTML before deploying
+      var allData = bigObject;
+
       var parsedItems = parseTitle(allData.value.items);
       $scope.items = parsedItems;
 
-      $scope.loading = false;
-      // $scope.loading = false;
+      $timeout(function(){
+        $scope.loading = false;
+        console.timeEnd('items loaded: ');
+      }, 1000);
+
+
 
     }
   ])
