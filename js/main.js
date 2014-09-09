@@ -38,7 +38,7 @@ angular.module('tedForm', [])
       $timeout(function(){
         $scope.loading = false;
         console.timeEnd('items loaded: ');
-      }, 1000);
+      }, 1500);
 
 
 
